@@ -1,0 +1,16 @@
+/.expo/
+/node_modules/
+/android/
+/ios/
+/dist/
+/credentials.json
+**/build/
+**/.gradle/
+**/.cxx/
+.env*
+*.apk
+*.jks
+*.keystore
+*.p12
+*.pem
+*.clixml

@@ -1,0 +1,26 @@
+{
+  "name": "payload",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.16" },
+  "bin": { "payload": "./scripts/payload.mjs" },
+  "scripts": {
+    "payload": "node scripts/payload.mjs",
+    "publish:apk": "node scripts/payload.mjs publish",
+    "worker:dev": "wrangler dev --config worker/wrangler.jsonc",
+    "worker:deploy": "wrangler deploy --config worker/wrangler.jsonc",
+    "check": "tsc -p worker && npm --prefix mobile run check",
+    "test": "node --test worker/test/*.test.mjs scripts/*.test.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1175.0",
+    "aws4fetch": "^1.0.20"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261121.1",
+    "esbuild": "^0.28.2",
+    "miniflare": "^4.20260730.0",
+    "typescript": "~5.9.3",
+    "wrangler": "^4.166.0"
+  }
+}

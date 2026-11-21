@@ -1,0 +1,21 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "payload",
+  "account_id": "64142fd5d80cf370ee9768ad7d0c0423",
+  "workers_dev": true,
+  "preview_urls": false,
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-30",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "payload",
+      "database_id": "c221cf91-94dc-4fc1-91ee-232607b828af"
+    }
+  ],
+  "r2_buckets": [
+    { "binding": "APKS", "bucket_name": "payload-apks" }
+  ],
+  "vars": { "R2_BUCKET_NAME": "payload-apks" },
+  "triggers": { "crons": ["*/15 * * * *", "* * * * *"] }
+}
